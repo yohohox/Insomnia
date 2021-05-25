@@ -1,0 +1,59 @@
+object MainForm: TMainForm
+  Left = 915
+  Height = 140
+  Top = 114
+  Width = 180
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Insomnia'
+  ClientHeight = 140
+  ClientWidth = 180
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poDesktopCenter
+  LCLVersion = '2.0.12.0'
+  object GroupBoxInterval: TGroupBox
+    Left = 5
+    Height = 60
+    Top = 5
+    Width = 170
+    Align = alCustom
+    Caption = 'Интервал (сек.)'
+    ClientHeight = 40
+    ClientWidth = 166
+    TabOrder = 0
+    object EditInterval: TEdit
+      Left = 5
+      Height = 23
+      Top = 5
+      Width = 155
+      Alignment = taCenter
+      TabOrder = 0
+    end
+  end
+  object ButtonStart: TButton
+    Left = 5
+    Height = 25
+    Top = 72
+    Width = 170
+    Caption = 'Старт'
+    OnClick = ButtonStartClick
+    TabOrder = 1
+  end
+  object ButtonStop: TButton
+    Left = 5
+    Height = 25
+    Top = 104
+    Width = 170
+    Caption = 'Стоп'
+    OnClick = ButtonStopClick
+    TabOrder = 2
+  end
+  object TimerInterval: TTimer
+    Enabled = False
+    Interval = 0
+    OnTimer = TimerIntervalTimer
+    Left = 128
+    Top = 8
+  end
+end
